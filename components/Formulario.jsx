@@ -5,7 +5,7 @@ import Citas from './Citas';
 
 const Formulario = () => {
    
-    const citasLocalStorage = JSON.parse(localStorage.getItem('citas') || [])
+    const citasLocalStorage = JSON.parse(localStorage.getItem('citas')) || [] 
     const [listaCitas, setlistaCitas] = useState(citasLocalStorage)
     const [nombreMascota, setnombreMascota] = useState("")
     const [nombreDueño, setnombreDueño] = useState("")
@@ -18,8 +18,9 @@ const Formulario = () => {
 
 
     useEffect(() => {
-        localStorage.setItem('citas', JSON.stringify(listaCitas));
-      }, [listaCitas]);
+            localStorage.setItem('citas', JSON.stringify(listaCitas));
+    
+      });
 
 const guardarCita = (e)=>{
 e.preventDefault()
